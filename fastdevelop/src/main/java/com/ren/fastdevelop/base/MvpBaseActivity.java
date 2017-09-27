@@ -3,6 +3,7 @@ package com.ren.fastdevelop.base;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 
 import com.hannesdorfmann.mosby3.mvp.MvpActivity;
@@ -59,5 +60,10 @@ public abstract class MvpBaseActivity<V extends MvpView, P extends MvpPresenter<
     @Override
     public void showToast(Context context, String text) {
         ToastUtil.makeText(context, text);
+    }
+
+    @Override
+    public void showLog(String log) {
+        Log.e(" " + this, log);
     }
 }

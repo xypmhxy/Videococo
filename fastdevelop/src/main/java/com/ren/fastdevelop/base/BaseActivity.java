@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 
 import com.jaeger.library.StatusBarUtil;
@@ -64,5 +65,10 @@ public class BaseActivity extends AppCompatActivity implements IBaseActivity {
     @Override
     public void showToast(Context context, String text) {
         ToastUtil.makeText(context, text);
+    }
+
+    @Override
+    public void showLog(String log) {
+        Log.e(" " + this, log);
     }
 }

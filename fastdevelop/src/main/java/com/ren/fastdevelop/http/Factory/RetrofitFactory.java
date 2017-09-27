@@ -30,7 +30,7 @@ public class RetrofitFactory {
         if (TextUtils.isEmpty(config.getBaseUrl()))
             throw new RuntimeException("baseUrl不能为空");
 
-        OkHttpClient client = OkHttpProvider.getOkHttpClient();
+        OkHttpClient client = OkHttpProvider.getOkHttpClient(null);
         Converter.Factory factory = getGsonConverterFactory(config.getGson());
         CallAdapter.Factory rxFactory = RxJava2CallAdapterFactory.create();
 
